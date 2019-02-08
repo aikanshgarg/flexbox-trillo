@@ -17,6 +17,7 @@ Grey dark 3: #999
 */
 
 // root is the global parent element (writing CSS variables instead of SASS variables)
+// CSS variables need to written inside a scope, we use :root selector for that so that variables are accessible all over and are together at one place
 :root {
 	--color-primary: #eb2f64;
 	--color-primary-light: #FF3366;
@@ -30,6 +31,8 @@ Grey dark 3: #999
 	--color-grey-dark-1: #333;
 	--color-grey-dark-2: #777;
 	--color-grey-dark-3: #999;
+
+	--shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
 }
 
 * {
