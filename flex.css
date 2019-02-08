@@ -1,0 +1,17 @@
+/*
+copy package.json file and run *sudo npm install*
+
+
+
+
+
+flex-direction: row; // main axis direction
+flex-wrap: wrap; // newline 
+justify-content: flex-start; // aligns items along main axis
+align-items: stretch; // aligns items along cross axis
+align-content: stretch; // In case of multiple rows, how they're arranged on cross axis
+
+flex: flex-grow flex-shrink flex-basis; // basis = width 
+
+
+*/
