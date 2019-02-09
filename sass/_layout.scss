@@ -11,7 +11,7 @@
 	font-size: 1.6rem;
 	height: 7rem;
 	background-color: #fff;
-	border-bottom: var(--color-grey-light-2);
+	border-bottom: 1px solid var(--color-grey-light-2);
 
 	display: flex; // parent
 	justify-content: space-between; // children alligned along main axis
@@ -21,6 +21,7 @@
 // parent(container) for flexbox
 .content {
 	display: flex;
+	background: #fff;
 }
 
 .sidebar {
