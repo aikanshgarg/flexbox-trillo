@@ -43,6 +43,9 @@ Grey dark 3: #999
 $bp-largest: 75em; // 1200px is first breakpoint, 1200/16 = 75
 $bp-large: 68.75em; // 1100/16
 $bp-medium: 56.25em;// 900/16
+$bp-small: 37.5em; // 600/16
+$bp-smallest: 31.25em; // 500/16
+$bp-phone: 26.25em; // 420/16
 
 * {
 	margin: 0;
@@ -62,6 +65,11 @@ html {
 	@media only screen and (max-width: $bp-large) {
 		font-size: 50%; // font-size: 8px; decreasing global font size so that everything becomes smaller, power of using rem!
 	}
+
+
+	@media only screen and (max-width: $bp-phone) {
+		font-size: 45%;		
+	}
 }
 
 body {
@@ -71,6 +79,7 @@ body {
 	background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
 	background-size: cover;
 	background-repeat: no-repeat;
+	color: var(--color-grey-dark-1);
 
 	min-height: 100vh;
 }

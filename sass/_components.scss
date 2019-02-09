@@ -10,11 +10,15 @@
 // SEARCH
 .search {
 	flex: 0 0 40%; // 0grow 0shrink	40%width
-
-
 	display: flex; // flex item becomes flex container(nested flex box): to center the item
 	align-items: center; // center along cross axis
 	justify-content: center; // center along main axis
+
+	@media only screen and (max-width: $bp-smallest) {
+		order: 1; // search will move to the end, as by default order = 0
+		flex: 0 0 100%; // increasing width so that search bar comes in a new row
+		background-color: var(--color-grey-light-2);
+	}
 
 	// input type don't inherit styles by default
 	&__input {
@@ -33,6 +37,10 @@
 			outline: none; // remove default
 			width: 100%;
 			background-color: var(--color-grey-light-3);
+
+			@media only screen and (max-width: $bp-smallest) {
+				width: 90%;
+			}
 		}
 
 		&::-webkit-input-placeholder {
@@ -197,6 +205,11 @@
 			padding: 2rem;
 		}
 
+		@media only screen and (max-width: $bp-small) {
+			flex-direction: column;
+			padding: 1.5rem .5rem;
+		}
+
 	}
 
 
@@ -205,6 +218,13 @@
 		height: 1.75rem;
 		fill: currentColor; // current color or color of parent element
 		margin-right: 2rem;
+
+		@media only screen and (max-width: $bp-small) {
+			margin: 0;
+			margin-bottom: .7rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
 	}
 }
 
@@ -264,6 +284,15 @@
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		padding: 1.5rem 3rem;
+
+		@media only screen and (max-width: $bp-small) {
+			font-size: 1.8rem;
+			padding: 1.25rem 2rem;
+		}
+
+		@media only screen and (max-width: $bp-phone) {
+			text-align: center;
+		}
 	}
 
 	&__stars {
@@ -283,8 +312,16 @@
 		display: flex;
 		align-items: center; // center on cross axis (Y-axis here)
 	}
+
 	&__icon-location{
 		margin-right: .5rem;
+
+		@media only screen and (max-width: $bp-phone) {
+			margin-right: 0;
+			margin-left: 3rem;
+			width: 2.25rem;
+			height: 2.25rem;			
+		}
 	}
 
 	&__rating {
@@ -298,17 +335,34 @@
 		flex-direction: column;
 		align-items: center; // cross axis
 		justify-content: center; // main axis
+
+		@media only screen and (max-width: $bp-small) {
+			padding: 0 1.5rem;
+		}
 	}
 
 	&__rating-average {
 		font-size: 2.25rem;
 		font-weight: 300;
 		margin-bottom: -3px;
+
+		@media only screen and (max-width: $bp-small) {
+			font-size: 1.8rem;
+		}
 	}
 
 	&__rating-count {
 		font-size: .8rem;
 		text-transform: uppercase;
+
+		@media only screen and (max-width: $bp-small) {
+			font-size: .5rem;
+		}
+
+		@media only screen and (max-width: $bp-phone) {
+			text-align: center;
+			margin-top: 2px;
+		}
 	}
 }
 
@@ -389,6 +443,10 @@
 	&__item {
 		flex: 0 0 50%; // width is 50% so that we have 2 elements side by side
 		margin-bottom: .7rem;
+
+		@media only screen and (max-width: $bp-phone) {
+			//font-size: 1.1rem;	
+		}
 	}
 
 	&__item::before {
@@ -398,16 +456,19 @@
 		width: 1rem;
 		margin-right: .7rem;
 
-		// older browsers
-		// background-image: url('../img/chevron-thin-right.svg');
-		// background-size: cover;
+		// Older browsers
+		background-image: url('../img/chevron-thin-right.svg');
+		background-size: cover;
 
-		// Newer browsers --> MASK (we can peek through )
-		background-color: var(--color-primary);
-		-webkit-mask-image:url('../img/chevron-thin-right.svg');
-		-webkit-mask-size: cover; // to fit icon inside completely
-		mask-image:url('../img/chevron-thin-right.svg');
-		mask-size: cover;
+		// Newer browsers --> MASK (we can peek through)
+		@supports (-webkit-mask-image: url()) or (mask-image: url()) {
+			background-color: var(--color-primary);
+			-webkit-mask-image:url('../img/chevron-thin-right.svg');
+			-webkit-mask-size: cover; // to fit icon inside completely
+			mask-image:url('../img/chevron-thin-right.svg');
+			mask-size: cover;
+			background-image: none;
+		}	
 	}
 }
 
@@ -501,7 +562,7 @@
 	&::before {
 		content: "\201C";
 		position: absolute;
-		top: -2.75rem;
+		top: -3.4rem;
 		left: -1rem;
 		line-height: 1;
 		font-size: 20rem;
