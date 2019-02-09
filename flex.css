@@ -1,10 +1,4 @@
 /*
-copy package.json file and run *sudo npm install*
-
-
-
-
-
 flex-direction: row; // main axis direction
 flex-wrap: wrap; // newline 
 justify-content: flex-start; // aligns items along main axis
@@ -13,5 +7,19 @@ align-content: stretch; // In case of multiple rows, how they're arranged on cro
 
 flex: flex-grow flex-shrink flex-basis; // basis = width 
 
-
 */
+
+/*- copy package.json file and run *sudo npm install**/
+
+
+
+
+/**********************************************
+
+- Why SVGs over icon-fonts?
+	- screen readers for blind people fail
+	- hack to display icons
+	- browsers fail more often
+
+
+************************************************/

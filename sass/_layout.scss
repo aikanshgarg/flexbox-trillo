@@ -8,10 +8,14 @@
 }
 
 .header {
+	font-size: 1.6rem;
 	height: 7rem;
 	background-color: #fff;
 	border-bottom: var(--color-grey-light-2);
 
+	display: flex; // parent
+	justify-content: space-between; // children alligned along main axis
+	align-items: center; // children alligned along cross axis 
 }
 
 // parent(container) for flexbox
