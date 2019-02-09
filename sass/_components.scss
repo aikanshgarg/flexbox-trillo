@@ -111,8 +111,8 @@
 		right: 1.1rem;
 
 		display: flex; // 4th level flex nesting to center text
-		justify-content:center; // x-axis
-		align-items:center; // y-axis
+		justify-content:center; // main: x-axis
+		align-items:center; // cross: y-axis
 	}
 
 	&__user-photo {
@@ -121,8 +121,96 @@
 		width: 3.75rem;
 		margin-right: 1rem;
 	}
-	
+
 	&__user-name {
 		color: #333;
+	}
+}
+
+///////////////////////////////
+// SIDE NAVIGATION
+.side-nav {
+	font-size: 1.4rem;
+	list-style: none;
+	margin-top: 3.5rem;
+
+	&__item{ 
+		position: relative; // parent of before pseudo
+
+		&:not(:last-child) {
+			margin-bottom: .5rem;
+		}
+	}
+
+	&__item::before {
+		content: ""; // required
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%; // same height as list item
+		width: 3px;
+		background-color: var(--color-primary);
+		transform: scaleY(0); // animation
+		transition: transform .2s, 
+					width .4s cubic-bezier(1,0,0,1) .2s,
+					background-color .1s; //.2s is delay in width transition
+	}
+
+	&__item:hover::before,
+	&__item--active::before {
+		transform: scaleY(1);
+		width: 100%; // from 3px to 100% 
+	}
+
+	&__item:active::before { // on clicking li item
+		background-color: var(--color-primary-light);
+	}
+
+	&__link:link,
+	&__link:visited {
+		text-decoration: none;
+		color: var(--color-grey-light-1);
+		text-transform: uppercase;
+		display: inline-block;
+		padding: 1.5rem 3rem;
+		position: relative; // for z-index to work, we need position to be defined
+		z-index: 10; // on top of before element
+
+		display: flex; // parent
+		align-items: center; // center on cross axis (Y-axis here)
+
+	}
+
+
+	&__icon {
+		width: 1.75rem;
+		height: 1.75rem;
+		fill: currentColor; // current color or color of parent element
+		margin-right: 2rem;
+	}
+}
+
+///////////////////////////////
+// LEGAL TEXT
+.legal {
+	font-size: 1.2rem;
+	color: var(--color-grey-light-4);
+	text-align: center;
+	padding: 2.7rem;
+
+	&__link {
+		text-decoration: none;
+		color: inherit;// from parent(legal)
+		display: inline-block; // to make rotate work
+		transition: all .2s;
+	}
+	&__link:hover {
+		padding: 1px 2px;
+		border-radius: 2px;
+		color: #FF3366;
+		background-color: var(--color-grey-dark-1);
+		-webkit-box-shadow: 0 1rem 2rem rgba(0,0,0,0.4);
+    	box-shadow: 0 1rem 2rem rgba(0,0,0,0.4);
+		transform: rotate(5deg) scale(1.2);
 	}
 }

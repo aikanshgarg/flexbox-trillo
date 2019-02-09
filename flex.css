@@ -20,6 +20,11 @@ flex: flex-grow flex-shrink flex-basis; // basis = width
 	- screen readers for blind people fail
 	- hack to display icons
 	- browsers fail more often
+	- spritesheet is useful as we need only 1 http request instead of as many as icons
 
-
+- New CSS properties: 
+	currentColor
+	Variables 
+	::before element for animation
+	:not(:last-child)
 ************************************************/

@@ -26,10 +26,15 @@
 .sidebar {
 	background-color: var(--color-grey-dark-1);
 
-	flex: 0 0 18%; // don't grow don't shrink have 18% width
+	flex: 0 0 18%; // don't grow  don't shrink  have 18% width
+
+	display: flex; // parent container
+	flex-direction: column; // main axis is now Y-axis
+	justify-content: space-between; // divide all space between children
 }
 
 .hotel-view {
+	height: 80rem;
 	background-color: red;
 
 	flex: 1; // grow as much as it can
