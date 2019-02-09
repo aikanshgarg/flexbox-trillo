@@ -38,6 +38,12 @@ Grey dark 3: #999
 	--line: 1px solid var(--color-grey-light-2);
 }
 
+
+// SASS variables for media queries
+$bp-largest: 75em; // 1200px is first breakpoint, 1200/16 = 75
+$bp-large: 68.75em; // 1100/16
+$bp-medium: 56.25em;// 900/16
+
 * {
 	margin: 0;
 	padding: 0;
@@ -52,6 +58,10 @@ Grey dark 3: #999
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; //font-size: 10px; 10px = 62.5% of 16px(default browser font-size says 1rem = 16px), we define 1rem = 10px
+
+	@media only screen and (max-width: $bp-large) {
+		font-size: 50%; // font-size: 8px; decreasing global font size so that everything becomes smaller, power of using rem!
+	}
 }
 
 body {

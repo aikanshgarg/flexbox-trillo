@@ -133,11 +133,25 @@
 	list-style: none;
 	margin-top: 3.5rem;
 
+	@media only screen and (max-width: $bp-medium) {
+		display: flex; // to align items of side-nav side-by-side
+		margin: 0;
+	}
+
 	&__item{ 
 		position: relative; // parent of before pseudo
-
+		backface-visibility: hidden; // HACK to prevent shaky animation
+		
 		&:not(:last-child) {
 			margin-bottom: .5rem;
+
+			@media only screen and (max-width: $bp-medium) {
+				margin-bottom: 0;
+			}
+		}
+
+		@media only screen and (max-width: $bp-medium) {
+			flex: 1; // flex-grow: 1; allow all items to occupy as much space as possible, all will get equal space of 1/4th
 		}
 	}
 
@@ -178,6 +192,11 @@
 		display: flex; // parent
 		align-items: center; // center on cross axis (Y-axis here)
 
+		@media only screen and (max-width: $bp-medium) {
+			justify-content: center; // along (main)x-axis
+			padding: 2rem;
+		}
+
 	}
 
 
@@ -196,6 +215,10 @@
 	color: var(--color-grey-light-4);
 	text-align: center;
 	padding: 2.7rem;
+
+	@media only screen and (max-width: $bp-medium) {
+		display: none;
+	}
 
 	&__link {
 		text-decoration: none;
@@ -291,7 +314,7 @@
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// BUTTON INLINE
+// BUTTON INLINE (location button)
 .btn-inline {
 	border: none; // remove default styling
 	color: var(--color-primary);
@@ -322,6 +345,7 @@
 	}
 }
 
+// pulsating animation
 @keyframes pulse {
 	0% {
 		transform: scale(1);
@@ -401,7 +425,7 @@
 	}
 
 	&__friends {
-
+		display: flex; // to make sure photos always remain side by side
 	}
 
 	&__photo {
@@ -412,7 +436,7 @@
 		border: 3px solid #fff;
 
 		&:not(:last-child) {
-			margin-right: -1.5rem; // gives the effect of images overlapping
+			margin-right: -2rem; // gives the effect of images overlapping
 		}
 	}
 }
@@ -427,6 +451,11 @@
 	margin-bottom: 3.5rem;
 	position: relative; // parent(posn for " styling)
 	overflow: hidden;
+
+	@media only screen and (max-width: $bp-medium) {
+		padding: 2rem;
+		margin-bottom: 3rem;
+	}
 
 	&__text {
 		margin-bottom: 2rem;
@@ -490,6 +519,10 @@
 .cta {
 	padding: 3.5rem 0;
 	text-align: center;
+
+	@media only screen and (max-width: $bp-medium) {
+		padding: 2.5rem 0;
+	}
 
 	&__book-now {
 		font-size: 	1.7rem;

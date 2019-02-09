@@ -4,7 +4,13 @@
 	background-color: var(--color-grey-light-2);
 	box-shadow: var(--shadow-dark);
 
-	min-height: 50rem;
+	//min-height: 50rem; //for testing purpose only
+
+	@media only screen and (max-width: $bp-largest) {
+		margin: 0; // remove pink gradient bg
+		max-width: 100%;
+		//width: 100%;
+	} 
 }
 
 .header {
@@ -18,10 +24,14 @@
 	align-items: center; // children centered along cross axis 
 }
 
-// parent(container) for flexbox
+
 .content {
-	display: flex;
+	display: flex; // parent(container) for flexbox
 	background: #fff;
+
+	@media only screen and (max-width: $bp-medium) {
+		flex-direction: column; // to bring side-nav on top of hotel view
+	} 
 }
 
 .sidebar {
@@ -46,6 +56,10 @@
 	background-color: var(--color-grey-light-1);
 	color: var(--color-grey-dark-1);
 	font-size: 1.4rem;
+
+	@media only screen and (max-width: $bp-medium) {
+		padding: 3rem;
+	}
 }
 
 .description {
@@ -54,6 +68,11 @@
 	margin-right: 4.5rem;
 	box-shadow: var(--shadow-light);
 	padding: 3rem;	
+
+	@media only screen and (max-width: $bp-medium) {
+		padding: 2rem;
+		margin-right: 3rem;
+	}
 }
 
 .user-reviews {
