@@ -214,3 +214,54 @@
 		transform: rotate(5deg) scale(1.2);
 	}
 }
+
+
+///////////////////////////////
+// GALLERY
+.gallery {
+	display: flex;
+
+	&__photo {
+		width: 100%; // responsive images should always be fluid, have height or width in %
+	}
+}
+
+
+
+///////////////////////////////
+// HOTEL OVERVIEW
+.overview {
+	display: flex; 
+
+
+	&__heading {
+
+	}
+
+	&__stars {
+		margin-right: auto; // very USEFUL & IMPORTANT property in FLEXBOX!!!
+	}
+
+	&__icon-star,
+	&__icon-location {
+		width: 1.75rem;
+		height: 1.75rem;
+		fill: var(--color-primary);
+	}
+
+	&__location {
+		
+	}
+
+	&__rating {
+
+	}
+
+	&__rating-average {
+
+	}
+
+	&__rating-count {
+
+	}
+}

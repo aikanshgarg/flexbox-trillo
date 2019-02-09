@@ -22,6 +22,8 @@ flex: flex-grow flex-shrink flex-basis; // basis = width
 	- browsers fail more often
 	- spritesheet is useful as we need only 1 http request instead of as many as icons
 
+- margin: auto; in FLEXBOX!!!
+
 - New CSS properties: 
 	currentColor
 	Variables 
