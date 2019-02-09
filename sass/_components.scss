@@ -305,11 +305,20 @@
 
 	&:hover {
 		color: var(--color-grey-dark-1);
+
+		span {
+			margin-left: 8px;
+			transition: margin-left .2s;
+		}
 	}
 
 	&:focus {
 		outline: none; // remove default styling
 		animation: pulse 1s infinite;
+	}
+
+	& span {
+		margin-left: 3px;
 	}
 }
 
@@ -405,5 +414,70 @@
 		&:not(:last-child) {
 			margin-right: -1.5rem; // gives the effect of images overlapping
 		}
+	}
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// USER-REVIEWS
+.review {
+	background-color: #fff;
+	box-shadow: var(--shadow-light);
+	padding: 3rem;
+	margin-bottom: 3.5rem;
+	position: relative; // parent(posn for " styling)
+	overflow: hidden;
+
+	&__text {
+		margin-bottom: 2rem;
+		z-index: 10;
+		position: relative; // required for z-index to work
+	}
+
+	&__user{ 
+		display: flex;
+		align-items: center;
+	}
+
+	&__photo {
+		height: 4.5rem;
+		width: 4.5rem;
+		border-radius: 50%;
+		margin-right: 1.5rem;
+	}
+
+	&__user-box {
+		margin-right: auto; // very USEFUL property in flex!!!
+	}
+
+	&__user-name {
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 1.1rem;
+		margin-bottom: .4rem;
+	}
+
+	&__user-date {
+		font-size: 1rem;
+		color: var(--color-grey-dark-3);
+	}
+
+	&__user-rating {
+		color: var(--color-primary);
+		font-size: 2.2rem;
+		font-weight: 300;
+	}
+
+	// for making a quotation mark
+	&::before {
+		content: "\201C";
+		position: absolute;
+		top: -2.75rem;
+		left: -1rem;
+		line-height: 1;
+		font-size: 20rem;
+		font-family: sans-serif;
+		color: var(--color-grey-light-2);
+		z-index: 1;
 	}
 }

@@ -67,12 +67,12 @@ body {
 
 /* Mozilla based browsers */
 *::-moz-selection {
-       background-color: var(--color-primary-light);
+       background-color: var(--color-primary);
        color: var(--color-grey-light-1);
 }
 
 /* Works in Safari */
 *::selection {
-       background-color: var(--color-primary-light);
+       background-color: var(--color-primary);
        color: var(--color-grey-light-1);
 }

@@ -45,6 +45,7 @@
 	border-bottom: var(--line);
 	background-color: var(--color-grey-light-1);
 	color: var(--color-grey-dark-1);
+	font-size: 1.4rem;
 }
 
 .description {
@@ -52,11 +53,13 @@
 	background-color: #fff;
 	margin-right: 4.5rem;
 	box-shadow: var(--shadow-light);
-	padding: 3rem;
-	font-size: 1.4rem;
+	padding: 3rem;	
 }
 
 .user-reviews {
-	background: blue;
 	flex: 1; // grow fully, take entire available space
+	display: flex; // parent: to align button in center
+	flex-direction: column;
+	align-items: center;
+
 }

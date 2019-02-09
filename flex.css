@@ -15,6 +15,7 @@ flex: flex-grow flex-shrink flex-basis; // basis = width
 
 
 /**********************************************
+- z-index always requires position to be defined
 
 - Why SVGs over icon-fonts?
 	- screen readers for blind people fail
