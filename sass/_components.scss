@@ -233,7 +233,7 @@
 .overview {
 	display: flex; // parent of heading, stars, location and rating
 	align-items: center; // center on cross axis(y-axis here)
-	border-bottom: 1px solid var(--color-grey-light-2);
+	border-bottom: var(--line);
 
 	&__heading {
 		font-size: 2.25rem;

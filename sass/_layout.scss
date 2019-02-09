@@ -11,7 +11,7 @@
 	font-size: 1.6rem;
 	height: 7rem;
 	background-color: #fff;
-	border-bottom: 1px solid var(--color-grey-light-2);
+	border-bottom: var(--line);
 
 	display: flex; // parent
 	justify-content: space-between; // children alligned along main axis
@@ -35,8 +35,27 @@
 }
 
 .hotel-view {
-	height: 80rem;
-	
-
 	flex: 1; // grow as much as it can
+}
+
+
+.detail {
+	display: flex; // parent container
+	padding: 4.5rem;
+	border-bottom: var(--line);
+	background-color: var(--color-grey-light-1);
+}
+
+.description {
+	flex: 0 0 60%; // 60% width(flex-basis)
+	background-color: #fff;
+	margin-right: 4.5rem;
+	box-shadow: var(--shadow-light);
+	padding: 3rem;
+	font-size: 1.4rem;
+}
+
+.user-reviews {
+	background: blue;
+	flex: 1; // grow fully, take entire available space
 }
