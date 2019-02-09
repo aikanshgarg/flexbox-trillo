@@ -69,6 +69,10 @@
 	@media only screen and (max-width: $bp-small) {
 		flex-direction: column; // stack description and reviews one above other
 	} 
+
+	@media only screen and (max-width: $bp-phone) {
+		padding: 1.5rem;
+	}
 }
 
 .description {
